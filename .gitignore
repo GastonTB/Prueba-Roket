@@ -1,0 +1,12 @@
+# Angular
+/client/dist/
+/client/e2e/*.log
+/client/e2e/*.png
+/client/e2e/screenshots/
+
+# Node.js
+/server/node_modules/
+/server/npm-debug.log
+/server/yarn-error.log
+/server/package-lock.json
+/server/yarn.lock

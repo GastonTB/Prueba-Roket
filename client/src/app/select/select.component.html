@@ -1,0 +1,15 @@
+<!-- select.component.html -->
+<div>
+  <label for="arboles">Selecciona un árbol:</label>
+  <select id="arboles" (change)="onSelectArbol($event)">
+    <option value="" disabled>Selecciona un árbol</option>
+    <!-- Itera sobre la lista de arboles y crea opciones para cada uno -->
+    <option
+      *ngFor="let arbol of arboles; let first = first"
+      [value]="arbol.arbol_id"
+      [attr.selected]="first ? true : null"
+    >
+      {{ arbol.nombre_arbol }}
+    </option>
+  </select>
+</div>

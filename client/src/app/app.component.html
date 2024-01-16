@@ -1,0 +1,52 @@
+<style>
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .container {
+    flex-basis: 100%;
+    text-align: center; /* Centrar horizontalmente los elementos dentro de .container */
+  }
+
+  .mapita {
+    display: flex;
+  }
+
+  .select,
+  .mapa,
+  .comentario {
+    display: inline-block; /* Para que los elementos se centren horizontalmente */
+  }
+</style>
+
+<main class="main">
+  <div class="container">
+    <div class="select">
+      <app-select
+        (fotoSeleccionada)="cargarImagen($event)"
+        (ubicacionSeleccionada)="onUbicacionSeleccionada($event)"
+      ></app-select>
+    </div>
+  </div>
+  <div class="container">
+    <div class="mapa">
+      <div class="mapita">
+        <div>
+          <app-foto [fotoUrl]="urlDeLaFoto"></app-foto>
+        </div>
+        <div>
+          <app-mapa [ubicacion]="ubicacion"></app-mapa>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="comentario">
+      <app-comentario></app-comentario>
+    </div>
+  </div>
+</main>
+
+<router-outlet></router-outlet>
